@@ -1,109 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leandro Silva Santos | Senior Project Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leandro Silva Santos | Executive Portfolio</title>
+  <meta name="description" content="Senior Project Engineer com +25 anos em automação industrial, CAPEX e projetos globais." />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
+    :root{
+      --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --text:#e5e7eb; --accent:#22c55e; --accent2:#38bdf8;
     }
-    header {
-      background: linear-gradient(90deg, #1e293b, #334155);
-      padding: 40px;
-      text-align: center;
-    }
-    h1 { margin: 0; font-size: 32px; }
-    h2 { border-bottom: 2px solid #334155; padding-bottom: 5px; }
-    section { padding: 20px 40px; }
-    .container { max-width: 900px; margin: auto; }
-    .lang-toggle { text-align: right; padding: 10px 40px; }
-    button {
-      padding: 8px 12px;
-      margin-left: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 6px;
-    }
-    .active { background: #38bdf8; color: black; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#0b1220,#020617);color:var(--text);scroll-behavior:smooth}
+    a{color:var(--accent2);text-decoration:none}
+
+    .nav{position:fixed;top:0;width:100%;backdrop-filter:blur(10px);background:rgba(2,6,23,.6);padding:10px 20px;display:flex;justify-content:space-between;z-index:10}
+    .nav button{background:none;border:1px solid #334155;color:white;padding:6px 10px;border-radius:6px;cursor:pointer}
+
+    header{padding:120px 20px 60px;text-align:center}
+    .photo{width:150px;height:150px;border-radius:50%;border:4px solid var(--accent2);object-fit:cover;box-shadow:0 0 30px rgba(56,189,248,.3)}
+    h1{font-size:40px;margin:10px 0}
+    .subtitle{color:var(--muted)}
+
+    section{max-width:1100px;margin:auto;padding:60px 20px;opacity:0;transform:translateY(30px);transition:all .8s ease}
+    section.show{opacity:1;transform:translateY(0)}
+
+    h2{border-bottom:1px solid #1e293b;padding-bottom:6px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .card{background:var(--card);padding:20px;border-radius:14px;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+    .card:hover{transform:translateY(-6px) scale(1.02)}
+
+    .timeline{border-left:2px solid var(--accent2);padding-left:20px}
+    .timeline-item{margin-bottom:20px}
+
+    .metrics{display:flex;gap:20px;flex-wrap:wrap}
+    .metric{background:var(--card);padding:15px 20px;border-radius:10px}
+    .metric strong{font-size:22px;color:var(--accent)}
+
+    .btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:8px;background:var(--accent2);color:black;font-weight:bold}
   </style>
 </head>
 <body>
 
-<div class="lang-toggle">
-  <button onclick="setLang('pt')" class="active" id="btn-pt">PT</button>
-  <button onclick="setLang('en')" id="btn-en">EN</button>
+<div class="nav">
+  <div>Leandro Santos</div>
+  <div>
+    <button onclick="setLang('pt')">PT</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <header>
+  <img src="images/profile.png" class="photo" />
   <h1>Leandro Silva Santos</h1>
-  <p id="title">Engenheiro Eletricista | Automação Industrial</p>
+  <p class="subtitle" id="title">Senior Project Engineer | Industrial Automation</p>
+  <a class="btn" href="https://www.linkedin.com/in/leandro-silva-santos-41392428" target="_blank">LinkedIn</a>
 </header>
 
-<div class="container">
-
 <section>
-  <h2 id="about-title">Sobre mim</h2>
-  <p id="about-text">
-    Engenheiro com mais de 25 anos de experiência em automação industrial, engenharia elétrica e processos produtivos. Especialista em gestão de projetos, CAPEX e implementação de sistemas de automação.
-  </p>
+  <h2 id="aboutTitle">Executive Summary</h2>
+  <p id="aboutText">Engineer with over 25 years of experience leading industrial automation projects, CAPEX investments and global suppliers.</p>
 </section>
 
 <section>
-  <h2 id="exp-title">Experiência</h2>
-  <p id="exp-text">
-    Senior Project Engineer – Eternit<br>
-    Responsável por projetos industriais, automação e melhoria de processos.
-  </p>
+  <h2>Impact Metrics</h2>
+  <div class="metrics">
+    <div class="metric"><strong>20%+</strong><br><span id="m1">Cost reduction</span></div>
+    <div class="metric"><strong>15+</strong><br><span id="m2">Major projects delivered</span></div>
+    <div class="metric"><strong>25 yrs</strong><br><span id="m3">Industry experience</span></div>
+  </div>
 </section>
 
 <section>
-  <h2 id="skills-title">Habilidades</h2>
-  <ul id="skills-list">
-    <li>Automação Industrial</li>
-    <li>Gestão de Projetos</li>
-    <li>CAPEX</li>
-    <li>Engenharia Elétrica</li>
+  <h2 id="timelineTitle">Career Timeline</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <strong>Eternit</strong> – Senior Project Engineer
+    </div>
+    <div class="timeline-item">Electrical Engineering & Manufacturing Roles</div>
+  </div>
+</section>
+
+<section>
+  <h2 id="projectsTitle">Highlighted Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>PV Roof Tile Line</h3>
+      <p id="p1">Automated production line industrialization.</p>
+    </div>
+    <div class="card">
+      <h3>Automation Upgrade</h3>
+      <p id="p2">Efficiency and performance improvement.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 id="leadTitle">Leadership & Achievements</h2>
+  <ul id="leadList">
+    <li>Led multidisciplinary engineering teams</li>
+    <li>Managed CAPEX investments</li>
+    <li>Coordinated international suppliers</li>
   </ul>
 </section>
 
 <section>
-  <h2 id="contact-title">Contato</h2>
+  <h2 id="contactTitle">Contact</h2>
   <p>Email: seuemail@email.com</p>
+  <a class="btn" href="cv.pdf" download>Download CV (PDF)</a>
 </section>
 
-</div>
-
 <script>
-function setLang(lang) {
-  document.getElementById('btn-pt').classList.remove('active');
-  document.getElementById('btn-en').classList.remove('active');
+// animation on scroll
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+  sections.forEach(s=>{
+    const top=s.getBoundingClientRect().top;
+    if(top<window.innerHeight-50){s.classList.add('show');}
+  });
+});
 
-  if(lang === 'pt') {
-    document.getElementById('btn-pt').classList.add('active');
-
-    document.getElementById('title').innerText = 'Engenheiro Eletricista | Automação Industrial';
-    document.getElementById('about-title').innerText = 'Sobre mim';
-    document.getElementById('about-text').innerText = 'Engenheiro com mais de 25 anos de experiência em automação industrial, engenharia elétrica e processos produtivos.';
-    document.getElementById('exp-title').innerText = 'Experiência';
-    document.getElementById('exp-text').innerHTML = 'Senior Project Engineer – Eternit<br>Responsável por projetos industriais e automação.';
-    document.getElementById('skills-title').innerText = 'Habilidades';
-    document.getElementById('contact-title').innerText = 'Contato';
+function setLang(lang){
+  if(lang==='pt'){
+    title.innerText='Engenheiro Eletricista | Automação Industrial';
+    aboutTitle.innerText='Resumo Executivo';
+    aboutText.innerText='Engenheiro com mais de 25 anos liderando projetos industriais e automação.';
+    m1.innerText='Redução de custos';
+    m2.innerText='Projetos entregues';
+    m3.innerText='Experiência';
+    timelineTitle.innerText='Carreira';
+    projectsTitle.innerText='Projetos';
+    p1.innerText='Industrialização de linha automatizada';
+    p2.innerText='Melhoria de eficiência';
+    leadTitle.innerText='Liderança & Conquistas';
+    contactTitle.innerText='Contato';
   } else {
-    document.getElementById('btn-en').classList.add('active');
-
-    document.getElementById('title').innerText = 'Electrical Engineer | Industrial Automation';
-    document.getElementById('about-title').innerText = 'About me';
-    document.getElementById('about-text').innerText = 'Engineer with over 25 years of experience in industrial automation, electrical engineering, and manufacturing processes.';
-    document.getElementById('exp-title').innerText = 'Experience';
-    document.getElementById('exp-text').innerHTML = 'Senior Project Engineer – Eternit<br>Responsible for industrial projects and automation.';
-    document.getElementById('skills-title').innerText = 'Skills';
-    document.getElementById('contact-title').innerText = 'Contact';
+    title.innerText='Senior Project Engineer | Industrial Automation';
+    aboutTitle.innerText='Executive Summary';
+    aboutText.innerText='Engineer with 25+ years leading industrial automation and CAPEX projects.';
+    m1.innerText='Cost reduction';
+    m2.innerText='Projects delivered';
+    m3.innerText='Experience';
+    timelineTitle.innerText='Career Timeline';
+    projectsTitle.innerText='Projects';
+    p1.innerText='Automated production line';
+    p2.innerText='Efficiency improvement';
+    leadTitle.innerText='Leadership & Achievements';
+    contactTitle.innerText='Contact';
   }
 }
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
