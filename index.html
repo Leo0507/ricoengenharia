@@ -1,13 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Leandro Silva Santos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leandro Silva Santos | Senior Project Engineer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    header {
+      background: linear-gradient(90deg, #1e293b, #334155);
+      padding: 40px;
+      text-align: center;
+    }
+    h1 { margin: 0; font-size: 32px; }
+    h2 { border-bottom: 2px solid #334155; padding-bottom: 5px; }
+    section { padding: 20px 40px; }
+    .container { max-width: 900px; margin: auto; }
+    .lang-toggle { text-align: right; padding: 10px 40px; }
+    button {
+      padding: 8px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+    }
+    .active { background: #38bdf8; color: black; }
+  </style>
 </head>
-
 <body>
 
-<h1>Leandro Silva Santos</h1>
-<p>Meu site pessoal</p>
+<div class="lang-toggle">
+  <button onclick="setLang('pt')" class="active" id="btn-pt">PT</button>
+  <button onclick="setLang('en')" id="btn-en">EN</button>
+</div>
+
+<header>
+  <h1>Leandro Silva Santos</h1>
+  <p id="title">Engenheiro Eletricista | Automação Industrial</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2 id="about-title">Sobre mim</h2>
+  <p id="about-text">
+    Engenheiro com mais de 25 anos de experiência em automação industrial, engenharia elétrica e processos produtivos. Especialista em gestão de projetos, CAPEX e implementação de sistemas de automação.
+  </p>
+</section>
+
+<section>
+  <h2 id="exp-title">Experiência</h2>
+  <p id="exp-text">
+    Senior Project Engineer – Eternit<br>
+    Responsável por projetos industriais, automação e melhoria de processos.
+  </p>
+</section>
+
+<section>
+  <h2 id="skills-title">Habilidades</h2>
+  <ul id="skills-list">
+    <li>Automação Industrial</li>
+    <li>Gestão de Projetos</li>
+    <li>CAPEX</li>
+    <li>Engenharia Elétrica</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="contact-title">Contato</h2>
+  <p>Email: seuemail@email.com</p>
+</section>
+
+</div>
+
+<script>
+function setLang(lang) {
+  document.getElementById('btn-pt').classList.remove('active');
+  document.getElementById('btn-en').classList.remove('active');
+
+  if(lang === 'pt') {
+    document.getElementById('btn-pt').classList.add('active');
+
+    document.getElementById('title').innerText = 'Engenheiro Eletricista | Automação Industrial';
+    document.getElementById('about-title').innerText = 'Sobre mim';
+    document.getElementById('about-text').innerText = 'Engenheiro com mais de 25 anos de experiência em automação industrial, engenharia elétrica e processos produtivos.';
+    document.getElementById('exp-title').innerText = 'Experiência';
+    document.getElementById('exp-text').innerHTML = 'Senior Project Engineer – Eternit<br>Responsável por projetos industriais e automação.';
+    document.getElementById('skills-title').innerText = 'Habilidades';
+    document.getElementById('contact-title').innerText = 'Contato';
+  } else {
+    document.getElementById('btn-en').classList.add('active');
+
+    document.getElementById('title').innerText = 'Electrical Engineer | Industrial Automation';
+    document.getElementById('about-title').innerText = 'About me';
+    document.getElementById('about-text').innerText = 'Engineer with over 25 years of experience in industrial automation, electrical engineering, and manufacturing processes.';
+    document.getElementById('exp-title').innerText = 'Experience';
+    document.getElementById('exp-text').innerHTML = 'Senior Project Engineer – Eternit<br>Responsible for industrial projects and automation.';
+    document.getElementById('skills-title').innerText = 'Skills';
+    document.getElementById('contact-title').innerText = 'Contact';
+  }
+}
+</script>
 
 </body>
 </html>
